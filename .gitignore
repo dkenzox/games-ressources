@@ -39,5 +39,6 @@ Thumbs.db
 
 # NPM & BOWER #
 #######################
-node_modules/**
-bower_components/**
+build
+node_modules/
+vendor/
