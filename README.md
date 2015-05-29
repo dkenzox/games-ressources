@@ -4,7 +4,7 @@ New [Angularjs](https://angularjs.org/) powered site created using [ngBoilerplat
 ##Quick Start
 
 This projects uses npm to download its dependencies, to get it go to [npm's documentation](https://docs.npmjs.com/getting-started/installing-node) and follow the instructions.
-After npm is installed in your machine, please follow the next steps:
+Once npm is up and running, please follow the next steps:
 
 ```sh
 $ git clone git@github.com:dkenzox/games-ressources.git
