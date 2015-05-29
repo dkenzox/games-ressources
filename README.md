@@ -8,7 +8,7 @@ After npm is installed in your machine, please follow the next steps:
 ```sh
 $ git clone git@github.com:dkenzox/games-ressources.git
 $ cd games-ressource
-$ sudo npm -g install grunt-cli karma bower (if you don't have them already)
+$ sudo npm -g install grunt-cli karma bower (if you don\'t have them already)
 $ npm install (may require sudo or its equivalent in your system)
 $ bower install
 $ grunt watch
