@@ -1,4 +1,5 @@
 # gamesRessources
+New [Angularjs](https://angularjs.org/) powered site created using [ngBoilerplate](https://github.com/ngbp/ngbp) kickstarter project for testing purposes!
 
 ##Quick Start
 
