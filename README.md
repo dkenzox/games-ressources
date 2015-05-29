@@ -2,7 +2,7 @@
 
 ##Quick Start
 
-This projects uses npm to install its dependencies, to install it please go to [its documentation](https://docs.npmjs.com/getting-started/installing-node) and follow the instructions.
+This projects uses npm to install its dependencies, to install it please go to [npm's documentation](https://docs.npmjs.com/getting-started/installing-node) and follow the instructions.
 After npm is installed in your machine, please follow the next steps:
 
 ```sh
