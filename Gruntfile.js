@@ -5,6 +5,7 @@ module.exports = function ( grunt ) {
    * in `package.json` when you do `npm install` in this directory.
    */
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-concat');
@@ -34,6 +35,17 @@ module.exports = function ( grunt ) {
      * version. It's already there, so we don't repeat ourselves here.
      */
     pkg: grunt.file.readJSON("package.json"),
+
+
+    connect: {
+      server: {
+        options: {
+          port: 8000,
+          base: 'build',
+          keepalive: true 
+        }
+      }
+    },
 
     /**
      * The banner is the comment that is placed at the top of our compiled 
@@ -557,7 +569,7 @@ module.exports = function ( grunt ) {
    * before watching for changes.
    */
   grunt.renameTask( 'watch', 'delta' );
-  grunt.registerTask( 'watch', [ 'build', 'karma:unit', 'delta' ] );
+  grunt.registerTask( 'watch', [ 'build'] );
 
   /**
    * The default task is to build and compile.
@@ -570,8 +582,7 @@ module.exports = function ( grunt ) {
   grunt.registerTask( 'build', [
     'clean', 'html2js', 'jshint', 'coffeelint', 'coffee', 'less:build',
     'concat:build_css', 'copy:build_app_assets', 'copy:build_vendor_assets',
-    'copy:build_appjs', 'copy:build_vendorjs', 'copy:build_vendorcss', 'index:build', 'karmaconfig',
-    'karma:continuous' 
+    'copy:build_appjs', 'copy:build_vendorjs', 'copy:build_vendorcss', 'index:build'
   ]);
 
   /**
