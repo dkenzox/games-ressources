@@ -1,25 +1,37 @@
-angular.module( 'ngBoilerplate', [
-  'templates-app',
-  'templates-common',
-  'ngBoilerplate.home',
-  'ngBoilerplate.about',
-  'ui.router'
-])
+(function(){
+    'use strict'; 
+    angular.module( 'gamesRessources', [
+      'templates-app',
+      'templates-common',
+      'ui.router',
+      'home',
+      'about'
+    ])
 
-.config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {
-  $urlRouterProvider.otherwise( '/home' );
-})
+    .config(GamesRessourceConfig)
 
-.run( function run () {
-})
+    .controller('GamesRessourcesController', GamesRessourcesController);
 
-.controller( 'AppCtrl', function AppCtrl ( $scope, $location ) {
-  $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
-    if ( angular.isDefined( toState.data.pageTitle ) ) {
-      $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;
+    GamesRessourceConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+
+    function GamesRessourceConfig($stateProvider, $urlRouterProvider) {
+        $stateProvider.state('main', {
+            abstract:true,
+            views: {
+                'header': {
+                    templateUrl: 'parts/header.tpl.html'
+                },
+                'main': {
+                    template: '<div></div>'
+                },
+                'footer': {
+                    templateUrl: 'parts/footer.tpl.html'
+                }
+            }
+        });
+        $urlRouterProvider.otherwise( '/home' );
     }
-  });
-})
 
-;
+    function GamesRessourcesController() {}
 
+})();

@@ -1,29 +1,38 @@
-angular.module( 'ngBoilerplate.about', [
-  'ui.router',
-  'placeholders',
-  'ui.bootstrap'
-])
+(function() {
+    'use strict';
+    angular.module( 'about', [])
 
-.config(function config( $stateProvider ) {
-  $stateProvider.state( 'about', {
-    url: '/about',
-    views: {
-      "main": {
-        controller: 'AboutCtrl',
-        templateUrl: 'about/about.tpl.html'
-      }
-    },
-    data:{ pageTitle: 'What is It?' }
-  });
-})
+    .config(AboutConfig)
 
-.controller( 'AboutCtrl', function AboutCtrl( $scope ) {
-  // This is simple a demo for UI Boostrap.
-  $scope.dropdownDemoItems = [
-    "The first choice!",
-    "And another choice for you.",
-    "but wait! A third!"
-  ];
-})
+    .controller('AboutController', AboutController);
 
-;
+
+    AboutConfig.$inject = ['$stateProvider'];
+
+    function AboutConfig($stateProvider) {
+        $stateProvider.state( 'about', {
+            parent: 'main',
+            url: '/about',
+            views: {
+                "main@": {
+                    controller: 'AboutController',
+                    controllerAs: 'vm',
+                    templateUrl: 'about/about.tpl.html'
+                }
+            },
+            data:{ pageTitle: 'What is It?' }
+        });
+    }
+
+    AboutController.$inject = [''];
+
+    function AboutController() {
+        var vm = this;
+        vm.dropdownDemoItems = [
+            "The first choice!",
+            "And another choice for you.",
+            "but wait! A third!"
+        ];
+    }
+
+})();

@@ -42,7 +42,8 @@ module.exports = function ( grunt ) {
         options: {
           port: 8000,
           base: 'build',
-          keepalive: true 
+          keepalive: true,
+          open:true
         }
       }
     },
@@ -569,7 +570,7 @@ module.exports = function ( grunt ) {
    * before watching for changes.
    */
   grunt.renameTask( 'watch', 'delta' );
-  grunt.registerTask( 'watch', [ 'build'] );
+  grunt.registerTask( 'watch', [ 'build', 'connect'] );
 
   /**
    * The default task is to build and compile.

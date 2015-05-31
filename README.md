@@ -15,4 +15,4 @@ $ bower install
 $ grunt watch
 ```
 
-Once completed the previous steps you can access the page on `file:///path/to/games-ressources/build/index.html`
+Running `grunt watch` will open a new tab in your default browser using the `grunt-contrib-connect` settings, currently `http://localhost:8000`
